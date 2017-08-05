@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Plugin for IITD Students",
+  "description": "This extension will assist students of IITD in their daily life ;)",
+  "version": "0.5",
+
+  "browser_action": {
+   "default_icon": "ico.png",
+   "default_title": "Click me to open",
+   "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+  	"64" : "iitd.png",
+  	"32" : "ico.png",
+  	"16" : "iitd.png",
+  	"128" : "iitd.png"
+  },
+  "permissions": [
+   "contextMenus"
+   ]
+
+}
