@@ -10,6 +10,26 @@
    "default_title": "Click me to open",
    "default_popup": "popup.html"
   },
+  "content_scripts": [
+	{
+    "js": ["moodle.js"],
+    "matches": ["https://moodle.iitd.ac.in/login/index.php"]
+  	},
+ 	{
+    "js": ["webmail.js"],
+    "matches": ["https://webmail.iitd.ernet.in/roundcube/*"]
+  	},
+    {
+    "js": ["webmail.js"],
+    "matches": ["https://webmail.iitd.ac.in/roundcube/*"]
+  	},
+    {
+    "js": ["kerberos.js"],
+    "matches": ["https://proxy22.iitd.ernet.in/cgi-bin/proxy.cgi*"]
+    }
+
+  ],
+
   "background": {
     "scripts": ["background.js"],
     "persistent": false
@@ -21,7 +41,9 @@
   	"128" : "iitd.png"
   },
   "permissions": [
-   "contextMenus"
+   "contextMenus",
+   "storage",
+   "notifications"
    ]
 
 }
