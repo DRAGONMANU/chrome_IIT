@@ -3,12 +3,9 @@ var textContent = body.textContent;
 
 var n = textContent.search("--\n");
 var myString = textContent.substring(n+3, n+110);
-console.log((myString));
 var sad = myString.replace("\n"," ").replace("\r"," ").replace(","," ").replace(/(\r\n|\n|\r)/gm," ");
 var splits = sad.replace(',',' ').split(' ', 100);
 
-console.log("======");
-console.log(splits.length);
 var temp = 0;
 var size = splits.length;
 for (var i = 0; i < size; i++)
@@ -17,7 +14,6 @@ for (var i = 0; i < size; i++)
 	{
 		splits = splits.slice(0,i-1);
 		size = i-1;
-		console.log("END");
 		break;
 	}
 	if(splits[i]=="" || splits[i]==" ")
@@ -27,9 +23,7 @@ for (var i = 0; i < size; i++)
 	}
 	else
 		temp=0;
-	console.log((splits[i]));
 }
-console.log(size);
 
 document.getElementsByTagName("td")[6].className = "input";
 
@@ -49,7 +43,7 @@ var str = " ";
 var re = /("."|-.-|:.:|'.'|\/.\/|_._)/;
 var qu = /(.*\?)/;
 var count = 0;
-///
+
 for (var i = 0; i < size; i++)
 {
 	if(splits[i]=="not")
@@ -104,10 +98,7 @@ for (var i = 0; i < size; i++)
 	}
 	else if(qu.test(splits[i]))
 	{
-		console.log("k=");
 		k=i;
-		console.log(k);
-
 	}
 	else if(splits[i]=="=")
 	{
@@ -127,18 +118,39 @@ for (var i = 0; i < size; i++)
 			count=count+2;
 
 		}
-		console.log(num);
 		nameValue=nameValue.replaceAt(id,num.toString());
 	 	id++;
 	 	i = i + count;
 	}
 }
 
-///
 var delayMillis = 500;
+
+
+var userid = "";
+chrome.storage.sync.get('username',function (data) {
+	userid=data.username;
+});
+
+var pass = "";
+chrome.storage.sync.get('password',function (data) {
+	pass=data.password;
+});
+
+var auto = false;
+chrome.storage.sync.get('auto',function (data) {
+	auto=data.auto;
+});
+
+var delayMillis = 500;
+var button = document.getElementById("rcmloginsubmit");
 
 setTimeout(function() 
 {
+	document.getElementsByName("_user")[0].value = userid;
+	document.getElementsByName("_pass")[0].value = pass;
  	document.getElementsByName("captcha_input")[0].value = nameValue;
+ 	if(auto)
+		button.click();
 }, delayMillis);
 

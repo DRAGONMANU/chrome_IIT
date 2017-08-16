@@ -43,7 +43,9 @@
   "permissions": [
    "contextMenus",
    "storage",
-   "notifications"
+   "notifications",
+   "proxy",
+   "downloads"
    ]
 
 }

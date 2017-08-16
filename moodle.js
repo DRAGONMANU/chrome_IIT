@@ -3,7 +3,6 @@ var textContent = body.textContent;
 
 var n = textContent.search("Please ");
 var myString = textContent.substring(n, n+40);
-console.log(myString);
 var splits = myString.split(' ', 10);
 var add = textContent.search("Please add");
 var enter1 = textContent.search("Please enter first");
@@ -13,30 +12,47 @@ var nameValue = "100";
 
 if(add!=-1)
 {
-	console.log("add");
 	nameValue = parseInt(splits[4],10)+parseInt(splits[6],10);
 }
 else if(subtract!=-1)
 {
-	console.log("sub");
 	nameValue = parseInt(splits[4],10)-parseInt(splits[6],10);
 }
 else if(enter1!=-1)
 {
-	console.log("first");
 	nameValue = parseInt(splits[6],10);
 }
 else
 {
-	console.log("second");
 	nameValue = parseInt(splits[8],10);
 }
 
-console.log(splits[4]);
-console.log(splits[6]);
-console.log(splits[8]);
-var delayMillis = 500;
+var delayMillis = 0;
+
+
+var userid = "";
+chrome.storage.sync.get('username',function (data) {
+	userid=data.username;
+});
+
+var pass = "";
+chrome.storage.sync.get('password',function (data) {
+	pass=data.password;
+});
+
+var auto = false;
+chrome.storage.sync.get('auto',function (data) {
+	auto=data.auto;
+});
+
+var button = document.getElementById("loginbtn");
 
 setTimeout(function() {
- document.getElementById("valuepkg3").value = nameValue;
+	document.getElementsByName("username")[0].value = userid;
+	document.getElementsByName("password")[0].value = pass;
+ 	document.getElementById("valuepkg3").value = nameValue;
+ 	if(auto)
+		button.click();
+
+
 }, delayMillis);
