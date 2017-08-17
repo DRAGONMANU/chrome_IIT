@@ -1,6 +1,3 @@
-var body = document.body;
-var textContent = body.textContent;
-
 var userid = "";
 chrome.storage.sync.get('username',function (data) {
 	userid=data.username;

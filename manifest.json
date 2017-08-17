@@ -3,7 +3,7 @@
 
   "name": "Plugin for IITD Students",
   "description": "This extension will assist students of IITD in their daily life ;)",
-  "version": "0.5",
+  "version": "0.6",
 
   "browser_action": {
    "default_icon": "ico.png",
@@ -26,13 +26,15 @@
     {
     "js": ["kerberos.js"],
     "matches": ["https://proxy22.iitd.ernet.in/cgi-bin/proxy.cgi*"]
+    },
+    {
+    "js": ["oauth.js"],
+    "matches": ["https://oauth.iitd.ac.in/*"]
     }
-
   ],
 
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "page": "background.html"
   },
   "icons": {
   	"64" : "iitd.png",
@@ -41,11 +43,10 @@
   	"128" : "iitd.png"
   },
   "permissions": [
-   "contextMenus",
    "storage",
    "notifications",
    "proxy",
-   "downloads"
-   ]
-
+   "tabs"
+   ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
