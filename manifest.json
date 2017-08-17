@@ -26,12 +26,16 @@
     {
     "js": ["kerberos.js"],
     "matches": ["https://proxy22.iitd.ernet.in/cgi-bin/proxy.cgi*"]
+    },
+    {
+    "js": ["oauth.js"],
+    "matches": ["https://oauth.iitd.ac.in/*"]
     }
-
   ],
 
   "background": {
-    "scripts": ["background.js"],
+    //"scripts": ["background.js"],
+    "page": "background.html",
     "persistent": false
   },
   "icons": {
@@ -45,7 +49,12 @@
    "storage",
    "notifications",
    "proxy",
-   "downloads"
+   "tabs",
+   "activeTab",
+   "clipboardWrite",   
+   "downloads",
+   "http://*/*",
+   "https://*/*"
    ]
 
 }

@@ -27,7 +27,7 @@ else
 	nameValue = parseInt(splits[8],10);
 }
 
-var delayMillis = 0;
+var delayMillis = 10;
 
 
 var userid = "";
@@ -53,6 +53,4 @@ setTimeout(function() {
  	document.getElementById("valuepkg3").value = nameValue;
  	if(auto)
 		button.click();
-
-
 }, delayMillis);
