@@ -28,6 +28,10 @@
     "matches": ["https://proxy22.iitd.ernet.in/cgi-bin/proxy.cgi*"]
     },
     {
+    "js": ["kerberos_dual.js"],
+    "matches": ["https://proxy62.iitd.ernet.in/cgi-bin/proxy.cgi*"]
+    },
+    {
     "js": ["oauth.js"],
     "matches": ["https://oauth.iitd.ac.in/*"]
     }
