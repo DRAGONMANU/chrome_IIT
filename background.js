@@ -13,7 +13,7 @@ var number = 0;
 var unread = 0;
 var lastno = -1;
 var first = true;
-var looptime = 7000;  //7 second time limit
+var looptime = 3000*60*60;  //3 hour time limit
 var moodle = false;
 var webmail = false;
 var exist = false;
@@ -156,16 +156,31 @@ chrome.runtime.onMessage.addListener(function(response, sender, sendResponse) {
 		
 		proxy=data.proxy;
 		});
+		var dual = false;
+		chrome.storage.sync.get('proxy',function (data) {
+			dual=data.dual;
+		});
 		var delayMillis = 10;
 		setTimeout(function() {
 			if(proxy) {
-				var config = {
-					mode: "pac_script",
-					pacScript: {
-						url : "http://www.cc.iitd.ernet.in/cgi-bin/proxy.btech",
-						mandatory : true
-					}
-				};
+				if (!dual){
+					var config = {
+						mode: "pac_script",
+						pacScript: {
+							url : "http://www.cc.iitd.ernet.in/cgi-bin/proxy.btech",
+							mandatory : true
+						}
+					};
+				}
+				else {
+					var config = {
+						mode: "pac_script",
+						pacScript: {
+							url : "http://www.cc.iitd.ernet.in/cgi-bin/proxy.dual",
+							mandatory : true
+						}
+					};
+				}
 			}
 			else {
 				var config = {

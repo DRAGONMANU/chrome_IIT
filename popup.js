@@ -17,7 +17,10 @@ window.onload = function() {
 	chrome.storage.sync.get('proxy',function (data) {
 	proxy=data.proxy;
 	});
-
+	var dual = false;
+	chrome.storage.sync.get('dual', function(data){
+		dual=data.dual;
+	});
 	var moodle = false;
 	chrome.storage.sync.get('moodle',function (data) {
 	moodle=data.moodle;
@@ -38,6 +41,7 @@ window.onload = function() {
 	 	document.getElementById('password').value = password;
 	 	document.getElementById('autologin').checked = auto1;
 		document.getElementById('proxy').checked = proxy;
+		document.getElementById('dual').checked = dual;
 		document.getElementById('moodle').checked = moodle; 
 		document.getElementById('webmail').checked = webmail; 
 	}, delayMillis);
@@ -48,7 +52,12 @@ window.onload = function() {
 	    //console.log(proxy);
 	    chrome.runtime.sendMessage('proxy');
 	}
-
+	document.getElementById('dual').onclick = function() {
+		var dual = document.getElementById('dual').checked;
+	    chrome.storage.sync.set({'dual': dual},function() {});
+	    //console.log(dual);
+	    chrome.runtime.sendMessage('dual');
+	}
 	document.getElementById('moodle').onclick = function() {
 		var moodle = document.getElementById('moodle').checked;
 	    chrome.storage.sync.set({'moodle': moodle},function() {});
