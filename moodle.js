@@ -47,10 +47,13 @@ chrome.storage.sync.get('auto',function (data) {
 
 var button = document.getElementById("loginbtn");
 
+var m = textContent.search("Invalid login");
 setTimeout(function() {
 	document.getElementsByName("username")[0].value = userid;
 	document.getElementsByName("password")[0].value = pass;
  	document.getElementById("valuepkg3").value = nameValue;
- 	if(auto)
+ 	if(auto & m==-1)
 		button.click();
+	if(m!=-1)
+		alert("Please check your username and password in the extension settings");
 }, delayMillis);

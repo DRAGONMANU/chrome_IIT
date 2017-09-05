@@ -4,16 +4,61 @@
 	<meta charset="utf-8">
     <title>Document</title>
     <script src="popup.js"></script>
+    <script src="ocrad.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  	<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+   	<link rel="stylesheet" href="style.css">
 </head>	
 <body>
-	<h2>Preferences</h2>
-	<input type="text" id="username" placeholder="Username.."></textarea>
+	<div class="container">
+          <div class="row">
+              <h4>Credentials</h4>
+              <div class="input-group input-group-icon">
+                <input type="text" placeholder="Username" id="username"/>
+                <div class="input-icon"><i class="fa fa-user"></i></div>
+              </div>
+              <div class="input-group input-group-icon">
+                <input type="password" placeholder="Password" id="password"/>
+                <div class="input-icon"><i class="fa fa-key"></i></div>
+              </div>
+				<button class="button" id="save">Update</button>
+          </div>
+          <div class="row">
+          <h4>AutoLogin</h4>
+               <div class="slideTwo">  
+                  <input type="checkbox" value="None" id="autologin" name="check" checked />
+                  <label for="autologin"></label>
+                </div>
+          </div>  
+          <div class="row">
+          <h4>Moodle Notifications</h4>
+               <div class="slideThree">  
+                  <input type="checkbox" value="None" id="moodle" name="check" checked />
+                  <label for="moodle"></label>
+                </div>
+          </div>            
+          <div class="row">
+          <h4>Webmail Notifications</h4>
+               <div class="slideThree">  
+                  <input type="checkbox" value="None" id="webmail" name="check" checked />
+                  <label for="webmail"></label>
+                </div>
+          </div>  
+	</div>
+    
+	<!--input type="text" id="username" placeholder="Username.."></textarea>
     <input type="password" id="password" placeholder="Password.."></textarea>
     AutoLogin
     <input type="checkbox" id="autologin">
   	<input type="button" id="save" value="Apply">
 	<br>
-    <strong>Proxy</strong>
+    <strong>Proxy setting</strong>
     <input type="checkbox" id="proxy">
+    <br>
+    <strong>Moodle</strong>
+    <input type="checkbox" id="moodle">
+    <br>
+    <strong>Webmail</strong>
+    <input type="checkbox" id="webmail"-->    
 </body>
 </html>

@@ -16,10 +16,18 @@ chrome.storage.sync.get('auto',function (data) {
 var delayMillis = 500;
 var button = document.getElementsByName("logon")[0];
 
+var body = document.body;
+var textContent = body.textContent;
+
+var n = textContent.search("Failed");
+
 setTimeout(function() 
 {
+	console.log(n);
  	document.getElementsByName("userid")[0].value = userid;
 	document.getElementsByName("pass")[0].value = pass;
-	if(auto)
+	if(auto && n==-1)
 		button.click();
+	if(n!=-1)
+		alert("Please check your username and password in the extension settings");
 }, delayMillis);

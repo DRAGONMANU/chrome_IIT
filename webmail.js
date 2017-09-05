@@ -124,8 +124,6 @@ for (var i = 0; i < size; i++)
 	}
 }
 
-var delayMillis = 500;
-
 
 var userid = "";
 chrome.storage.sync.get('username',function (data) {
@@ -142,15 +140,19 @@ chrome.storage.sync.get('auto',function (data) {
 	auto=data.auto;
 });
 
-var delayMillis = 500;
+var delayMillis = 10;
 var button = document.getElementById("rcmloginsubmit");
+
+var m = textContent.search("Login failed");
 
 setTimeout(function() 
 {
 	document.getElementsByName("_user")[0].value = userid;
 	document.getElementsByName("_pass")[0].value = pass;
  	document.getElementsByName("captcha_input")[0].value = nameValue;
- 	if(auto)
+ 	if(auto & m==-1)
 		button.click();
+	if(m!=-1)
+		alert("Please check your username and password in the extension settings");
 }, delayMillis);
 
