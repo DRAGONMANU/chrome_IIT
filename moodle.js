@@ -54,9 +54,6 @@ setTimeout(function() {
  	document.getElementById("valuepkg3").value = nameValue;
  	if(auto & m==-1)
 		button.click();
-<<<<<<< HEAD
 	if(m!=-1)
 		alert("Please check your username and password in the extension settings");
-=======
->>>>>>> origin/master
 }, delayMillis);
