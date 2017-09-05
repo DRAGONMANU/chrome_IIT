@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 {
   "manifest_version": 2,
 
   "name": "Plugin for IITD Students",
   "description": "This extension will assist students of IITD in their daily life ;)",
-  "version": "0.7",
+  "version": "0.9",
 
   "browser_action": {
    "default_icon": "ico.png",
@@ -54,57 +53,4 @@
    "tabs"
    ],
    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
-=======
-{
-  "manifest_version": 2,
-
-  "name": "Plugin for IITD Students",
-  "description": "This extension will assist students of IITD in their daily life ;)",
-  "version": "0.6",
-
-  "browser_action": {
-   "default_icon": "ico.png",
-   "default_title": "Click me to open",
-   "default_popup": "popup.html"
-  },
-  "content_scripts": [
-	{
-    "js": ["moodle.js"],
-    "matches": ["https://moodle.iitd.ac.in/login/index.php"]
-  	},
- 	{
-    "js": ["webmail.js"],
-    "matches": ["https://webmail.iitd.ernet.in/roundcube/*"]
-  	},
-    {
-    "js": ["webmail.js"],
-    "matches": ["https://webmail.iitd.ac.in/roundcube/*"]
-  	},
-    {
-    "js": ["kerberos.js"],
-    "matches": ["https://proxy22.iitd.ernet.in/cgi-bin/proxy.cgi*"]
-    },
-    {
-    "js": ["oauth.js"],
-    "matches": ["https://oauth.iitd.ac.in/*"]
-    }
-  ],
-
-  "background": {
-    "page": "background.html"
-  },
-  "icons": {
-  	"64" : "iitd.png",
-  	"32" : "ico.png",
-  	"16" : "iitd.png",
-  	"128" : "iitd.png"
-  },
-  "permissions": [
-   "storage",
-   "notifications",
-   "proxy",
-   "tabs"
-   ],
-   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
->>>>>>> origin/master
 }

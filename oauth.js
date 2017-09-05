@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var OCRAD = (function(){
 	function createOcradInstance(){
 	
@@ -96298,9 +96297,6 @@ var OCRAD = (function(){
 var captcha = document.getElementsByClassName('captcha-image')[0];
 var string = OCRAD(captcha);
 //alert(string);
-=======
-var captcha = document.getElementsByClassName('captcha-image')[0];
->>>>>>> origin/master
 
 var delayMillis = 0;
 
@@ -96318,21 +96314,15 @@ var auto = false;
 chrome.storage.sync.get('auto',function (data) {
 	auto=data.auto;
 });
-<<<<<<< HEAD
 var body = document.body;
 var textContent = body.textContent;
 
 var button = document.getElementsByClassName("btn btn-lg btn-primary btn-block")[0];
 var m = textContent.search("Login Failed");
-=======
-
-var nameValue = 'asd';
->>>>>>> origin/master
 
 setTimeout(function() {
 	document.getElementsByName("username")[0].value = userid;
 	document.getElementsByName("password")[0].value = pass;
-<<<<<<< HEAD
 	document.getElementsByName("captcha")[0].value = string;
 	if(auto & m==-1)
 		button.click();
@@ -96340,7 +96330,3 @@ setTimeout(function() {
 		alert("Please check your username and password in the extension settings");
 }, delayMillis);
 
-=======
- 	document.getElementsByName("captcha")[0].value = nameValue;
-}, delayMillis);
->>>>>>> origin/master
