@@ -1,6 +1,8 @@
 # chrome_IIT
 Chrome extension to assist IITD students
 
+Download link: https://chrome.google.com/webstore/detail/plugin-for-iitd-students/icilhkmmanohhkjkcdncahnpfdaiallg
+
 This extension has the following features:
 
 - Saving of kerebos password across multiple sites.
