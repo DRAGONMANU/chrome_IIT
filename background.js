@@ -202,7 +202,8 @@ function engine() {
 		if(webmail) {
 			var url = '';
 			exist = false;
-			chrome.tabs.getAllInWindow(undefined, function(tabs) {
+//			chrome.tabs.getAllInWindow(undefined, function(tabs) {
+			chrome.tabs.query(undefined, function(tabs) {
 				for (var i = 0, tab; tab = tabs[i]; i++) {
 					url = tab.url;		
 					if(url.indexOf("webmail")!=-1)

@@ -74,6 +74,6 @@ window.onload = function() {
     var username = document.getElementById('username').value;
     var pass = document.getElementById('password').value;
     chrome.storage.sync.set({'username': username},function() {});
-    chrome.storage.sync.set({'password': pass},function() {}); 
+	chrome.storage.sync.set({'password': pass},function() {});
 	};
 }

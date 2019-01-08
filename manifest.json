@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "Plugin for IITD Students",
+  "name": "Plugin for IITD Studentstest",
   "description": "This extension will assist students of IITD in their daily life ;)",
   "version": "0.9",
 
@@ -49,8 +49,13 @@
   "permissions": [
    "storage",
    "notifications",
-   "background",
    "tabs"
    ],
+  
+   "applications":{
+     "gecko":{
+       "id": "navneel99@gmail.com"
+     }
+   },
    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
