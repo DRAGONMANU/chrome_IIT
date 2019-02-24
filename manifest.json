@@ -49,8 +49,13 @@
   "permissions": [
    "storage",
    "notifications",
-   "background",
    "tabs"
    ],
+  
+   "applications":{
+     "gecko":{
+       "id": "nouser@nomail.com"
+     }
+   },
    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
